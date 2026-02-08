@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Sales Report - Gaming Center</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Monthly Sales Report</h1>
+    <nav class="nav-links">
+      <a href="index.html">POS</a>
+      <a href="admin.html">Manage Menu</a>
+      <a href="report.html">Sales Report</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </header>
+
+  <div class="report-container">
+    <div class="report-header">
+      <h2>Sales Report</h2>
+      <div class="report-filters">
+        <label>Month:</label>
+        <select id="monthSelect"></select>
+        <label>Year:</label>
+        <select id="yearSelect"></select>
+      </div>
+    </div>
+
+    <div class="summary-cards">
+      <div class="summary-card">
+        <div class="label">Total Revenue</div>
+        <div class="value" id="totalRevenue">₹0</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">Number of Orders</div>
+        <div class="value" id="orderCount">0</div>
+      </div>
+    </div>
+
+    <div class="report-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Bill ID</th>
+            <th>Items</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="reportTableBody"></tbody>
+      </table>
+    </div>
+    <div class="no-data" id="noData" style="display: none;">No sales for selected month.</div>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/report.js"></script>
+</body>
+</html>
